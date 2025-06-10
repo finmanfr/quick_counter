@@ -40,7 +40,7 @@
 
   <script>
     function send(val) {
-  const url = `https://script.google.com/macros/s/AKfycbxWhiBhg3Ni-8kOwM0-ps6bTQ-TYdmTpGfIpYk1g2HT8voDPwhI5JyY-o_-WVoIqu21/exec?count=${val}`;
+  const url = `https://script.google.com/macros/s/AKfycbyUHiW83FI4n5iCIlmLuJIvFUY9LAvJczQkhwe-c9_v63O62xwoa-XgLwwRSPczWqrZ/exec?count=${val}`;
       document.getElementById("status").textContent = "Sending...";
       fetch(url)
         .then(res => res.text())
