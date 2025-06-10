@@ -40,12 +40,12 @@
 
   <script>
     function send(val) {
-      const url = `https://script.google.com/macros/s/AKfycbyYVzBLl3n-tRQhCivqH4pzs2tHF6iMT2hVkkSPzJ4/exec?count=${val}`;
+      const url = `https://script.google.com/macros/s/AKfycbwxNTYn6mwNYEXtXf5Vrg98eyPxJG-ypV83TynjLGiCr1E_Cdm6z2kuwCj8Tu4FlvX7/exec?count=${val}`;
       document.getElementById("status").textContent = "Sending...";
       fetch(url)
         .then(res => res.text())
         .then(() => document.getElementById("status").textContent = `✅ Added +${val}`)
-        .catch(err => document.getElementById("status").textContent = `❌ Error`);
+        .catch(() => document.getElementById("status").textContent = `❌ Error`);
     }
   </script>
 </body>
