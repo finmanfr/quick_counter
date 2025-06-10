@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Count</title>
+  <style>
+    body {
+      font-family: -apple-system, sans-serif;
+      text-align: center;
+      padding: 1rem;
+      background: #000;
+      color: #fff;
+    }
+    button {
+      font-size: 1.2rem;
+      margin: 0.5rem;
+      padding: 1rem;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      border: none;
+      background: #28a745;
+      color: white;
+    }
+    #status {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>+ Counter</h2>
+  <div>
+    <button onclick="send(1)">+1</button>
+    <button onclick="send(2)">+2</button>
+    <button onclick="send(3)">+3</button>
+  </div>
+  <div id="status">Ready</div>
+
+  <script>
+    function send(val) {
+      const url = `https://script.google.com/macros/s/AKfycbyYVzBLl3n-tRQhCivqH4pzs2tHF6iMT2hVkkSPzJ4/exec?count=${val}`;
+      document.getElementById("status").textContent = "Sending...";
+      fetch(url)
+        .then(res => res.text())
+        .then(() => document.getElementById("status").textContent = `✅ Added +${val}`)
+        .catch(err => document.getElementById("status").textContent = `❌ Error`);
+    }
+  </script>
+</body>
+</html>
